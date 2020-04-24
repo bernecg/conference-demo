@@ -22,7 +22,7 @@ public class Session {
             inverseJoinColumns = @JoinColumn(name = "speaker_id"))
     private List<Speaker> speakers;
 
-    Session() {
+    public Session() {
     }
 
     public List<Speaker> getSpeakers() {
