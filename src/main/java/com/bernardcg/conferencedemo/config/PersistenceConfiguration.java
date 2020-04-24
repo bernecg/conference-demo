@@ -3,6 +3,7 @@ package com.bernardcg.conferencedemo.config;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.util.StringUtils;
 
 import javax.sql.DataSource;
 
@@ -14,7 +15,7 @@ public class PersistenceConfiguration {
         builder.url(System.getenv("DB_URL"));
         String username = System.getenv("DB_USERNAME");
         String password = System.getenv("DB_PASSWORD");
-        if (!username.isEmpty() && !password.isEmpty()) {
+        if (!StringUtils.isEmpty(username) && !StringUtils.isEmpty(password)) {
             builder.username(username);
             builder.password(password);
         }
