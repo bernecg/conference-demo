@@ -15,11 +15,13 @@ public class SessionsController {
     @Autowired
     private SessionRepository sessionRepository;
 
+    @CrossOrigin
     @GetMapping
     public List<Session> list() {
         return sessionRepository.findAll();
     }
 
+    @CrossOrigin
     @GetMapping
     @RequestMapping("{id}")
     public Session get(@PathVariable Long id) {

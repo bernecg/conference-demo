@@ -15,11 +15,13 @@ public class SpeakersController {
     @Autowired
     private SpeakerRepository speakerRepository;
 
+    @CrossOrigin
     @GetMapping
     public List<Speaker> list() {
         return speakerRepository.findAll();
     }
 
+    @CrossOrigin
     @GetMapping
     @RequestMapping("{id}")
     public Speaker get(@PathVariable Long id) {
